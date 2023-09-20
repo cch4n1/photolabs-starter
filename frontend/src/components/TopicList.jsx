@@ -2,7 +2,6 @@ import React from "react";
 
 import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
-import FavBadge from "./FavBadge";
 
 const sampleDataForTopicList = [
   {
