@@ -4,6 +4,7 @@ import React from 'react';
 import './App.scss';
 import PhotoList from './components/PhotoList';
 import TopicList from './components/TopicList';
+import TopNavigation from 'components/TopNavigationBar';
 
 // const sampleDataForPhotoListItem = {
 //   id: "1",
@@ -32,7 +33,7 @@ const App = () => {
         <PhotoListItem key={index} data={photoData} />
       ))} */}
       {/* { Array.from(Array(3)).map((_, index) => <PhotoListItem key={index}/>) } */}
-      <TopicList />
+      <TopNavigation />
       <PhotoList />
     </div>
   );
