@@ -4,6 +4,7 @@ import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import mockPhotos from 'mocks/photos';
 import mockTopics from 'mocks/topics';
+import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute photos={mockPhotos} topics={mockTopics}/>
+      <PhotoDetailsModal />
     </div>
   );
 };

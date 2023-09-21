@@ -11,6 +11,10 @@
   border-radius: 12px;
 }
 
+.photo-details-modal.closed {
+  display: none; /* Hide the modal when it has the "closed" class */
+}
+
 .photo-details-modal__close-button {
   background-color: white;
   border: none;
