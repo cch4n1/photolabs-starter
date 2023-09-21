@@ -10,7 +10,12 @@ const PhotoList = (props) => {
     <ul className="photo-list">
       {/* Insert React */}
       {props.photos.map((photoData, index) => (
-        <PhotoListItem key={index} data={photoData} />
+        <PhotoListItem 
+        key={index} 
+        photoData={photoData} 
+        toggleFavourite={props.toggleFavourite}
+        favourites={props.favourites}
+        />
       ))}
     </ul>
   );
