@@ -28,9 +28,12 @@ const HomeRoute = (props) => {
       {/* Insert React */}
       <TopNavigationBar navTopics={props.topics} isFavPhotoExist={favourites.length > 0}/>
       <PhotoList 
-      photos={props.photos}
-      toggleFavourite={toggleFavourite}
-      favourites={favourites}
+        photos={props.photos}
+        toggleFavourite={toggleFavourite}
+        favourites={favourites}
+        setIsOpen={props.setIsOpen}
+        selectedPhoto={props.selectedPhoto}
+        setSelectedPhoto={props.setSelectedPhoto}
       />
     </div>
   );

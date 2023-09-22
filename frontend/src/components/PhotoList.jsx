@@ -15,6 +15,9 @@ const PhotoList = (props) => {
         photoData={photoData} 
         toggleFavourite={props.toggleFavourite}
         favourites={props.favourites}
+        setIsOpen={props.setIsOpen}
+        selectedPhoto={props.selectedPhoto}
+        setSelectedPhoto={props.setSelectedPhoto}
         />
       ))}
     </ul>

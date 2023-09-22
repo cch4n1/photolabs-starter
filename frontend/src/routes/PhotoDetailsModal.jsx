@@ -3,16 +3,11 @@ import React, { useState } from 'react';
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
-const PhotoDetailsModal = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+const PhotoDetailsModal = (props) => {
 
   return (
-    <div className={`photo-details-modal ${isModalOpen ? 'open' : 'closed'}`}>
-      <button className="photo-details-modal__close-button" onClick={handleCloseModal}>
+    <div className={`photo-details-modal`}>
+      <button className="photo-details-modal__close-button" onClick={() => props.setIsOpen(false)}>
         <img src={closeSymbol} alt="close symbol" />
       </button>
     </div>
