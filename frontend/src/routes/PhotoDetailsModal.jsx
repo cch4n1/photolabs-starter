@@ -42,7 +42,11 @@ const PhotoDetailsModal = (props) => {
         </div>
       </div>
       <div className="photo-details-modal--images">
-        <PhotoList photos={similarPhotosArr} favourites={[]}/>
+        <PhotoList 
+          photos={similarPhotosArr} 
+          favourites={props.favourites}
+          toggleFavourite={props.toggleFavourite}
+        />
       </div>
     </div>
   );

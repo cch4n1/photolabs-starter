@@ -19,7 +19,17 @@ const App = () => {
     setSelectedPhoto(photoSelection);
   };
 
+  const [ favourites, setFavourites ] = useState([])
 
+  const toggleFavourite = (photoId) => {
+    if (favourites.includes(photoId)) {
+      const copyOfFavourites = [ ...favourites ].filter(favPhotoId => favPhotoId !== photoId)
+      setFavourites(copyOfFavourites);
+      return;
+    }   
+
+    setFavourites(prev => [...prev, photoId]) 
+  }
 
   return (
     <div className="App">
@@ -29,11 +39,15 @@ const App = () => {
         setIsOpen={setIsModalOpen}
         selectedPhoto={selectedPhoto}
         setSelectedPhoto={handleSelectedPhoto}
+        favourites={favourites}
+        toggleFavourite={toggleFavourite}
       />
       {isModalOpen && (
         <PhotoDetailsModal
           setIsOpen={setIsModalOpen}
           selectedPhoto={selectedPhoto}
+          favourites={favourites}
+          toggleFavourite={toggleFavourite}
         />
       )}
     </div>
