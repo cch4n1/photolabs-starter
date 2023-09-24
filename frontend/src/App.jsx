@@ -5,31 +5,20 @@ import HomeRoute from "routes/HomeRoute";
 import mockPhotos from "mocks/photos";
 import mockTopics from "mocks/topics";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
+import useApplicationData from "hooks/useApplicationData";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  // Maintain state for the modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Maintain state for selected photo data: pass from home to modal
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  // Function to check photo id of selected photo with database and then sets state to that photo
-  const handleSelectedPhoto = (photoId) => {
-    let photoSelection = mockPhotos.find((photo) => photo.id === photoId);
-    setSelectedPhoto(photoSelection);
-  };
-
-  const [ favourites, setFavourites ] = useState([])
-
-  const toggleFavourite = (photoId) => {
-    if (favourites.includes(photoId)) {
-      const copyOfFavourites = [ ...favourites ].filter(favPhotoId => favPhotoId !== photoId)
-      setFavourites(copyOfFavourites);
-      return;
-    }   
-
-    setFavourites(prev => [...prev, photoId]) 
-  }
+  const {   
+    isModalOpen, 
+    setIsModalOpen,
+    selectedPhoto,
+    setSelectedPhoto,
+    handleSelectedPhoto,
+    favourites,
+    setFavourites,
+    toggleFavourite 
+        } = useApplicationData();
 
   return (
     <div className="App">

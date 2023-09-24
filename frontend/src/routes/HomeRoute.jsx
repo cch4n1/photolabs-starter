@@ -14,7 +14,10 @@ const HomeRoute = (props) => {
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigationBar navTopics={props.topics} isFavPhotoExist={props.favourites.length > 0}/>
+      <TopNavigationBar 
+        navTopics={props.topics} 
+        isFavPhotoExist={props.favourites.length > 0}
+      />
       <PhotoList 
         photos={props.photos}
         toggleFavourite={props.toggleFavourite}
