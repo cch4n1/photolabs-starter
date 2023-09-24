@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../styles/PhotoDetailsModal.scss";
 import closeSymbol from "../assets/closeSymbol.svg";
 import PhotoList from "components/PhotoList";
+import PhotoFavButton from "components/PhotoFavButton";
 
 const PhotoDetailsModal = (props) => {
   console.log("Photo Modal Props: ", props.selectedPhoto.similar_photos);
@@ -20,6 +21,11 @@ const PhotoDetailsModal = (props) => {
       </button>
 
       <div className="photo-details-modal__box">
+        <PhotoFavButton
+          toggleFavourite={props.toggleFavourite}
+          photoId={props.selectedPhoto.id}
+          favourites={props.favourites}
+        />
         <img
           className="photo-details-modal__image"
           src={props.selectedPhoto.urls.regular}
@@ -32,9 +38,9 @@ const PhotoDetailsModal = (props) => {
             src={props.selectedPhoto.user.profile}
           />
           <br />
-          <div className="user-info****">
+          <div className="photo-details-modal__user-info">
             {props.selectedPhoto.user.name}
-            <div className="user-location***">
+            <div className="photo-details-modal__user-location">
               {props.selectedPhoto.location.city}{" "}
               {props.selectedPhoto.location.country}
             </div>
@@ -42,8 +48,8 @@ const PhotoDetailsModal = (props) => {
         </div>
       </div>
       <div className="photo-details-modal--images">
-        <PhotoList 
-          photos={similarPhotosArr} 
+        <PhotoList
+          photos={similarPhotosArr}
           favourites={props.favourites}
           toggleFavourite={props.toggleFavourite}
         />
