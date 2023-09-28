@@ -12,13 +12,16 @@ export const ACTIONS={
   TOGGLE_MODAL: 'TOGGLE_MODAL',
   SELECT_PHOTO: 'SELECT_PHOTO',
   TOGGLE_FAVOURITE: 'TOGGLE_FAVOURITE',
-  SET_PHOTO_DATA: 'SET_PHOTO_DATA'
+  SET_PHOTO_DATA: 'SET_PHOTO_DATA',
+  SET_TOPIC_DATA: 'SET_TOPIC_DATA'
 }
 
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.SET_PHOTO_DATA:
       return { ...state, photoData: action.payload};
+    case ACTIONS.SET_TOPIC_DATA:
+      return { ...state, topicData: action.payload};
     case ACTIONS.TOGGLE_MODAL:
       return {      
         ...state,
@@ -47,15 +50,6 @@ const useApplicationData = () => {
   
   const [state, dispatch] = useReducer(reducer, initialState)
  
-  // useEffect(() => {
-  //   // Fetch data when the component mounts
-  //   axios.get('http://localhost:8001/api/photos')
-  //   .then(({ data }) => {
-  //     console.log("data: ", data)
-  //     dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: data })
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, []);
 useEffect(() => {
   fetch('http://localhost:8001/api/photos')
     .then((response) => {
@@ -69,7 +63,20 @@ useEffect(() => {
     })
     .catch(error => console.error("There was an error with fetching data:", error));
 }, []);
-  
+
+useEffect(() => {
+  fetch('http://localhost:8001/api/topics')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: data })
+    })
+    .catch(error => console.error("There was an error with fetching data:", error));
+}, []);
 
  // Function to check photo id of selected photo with database and then sets state to that photo
  const handleSelectedPhoto = (photoId) => {
@@ -82,9 +89,7 @@ useEffect(() => {
 }
 
 
-  console.log("state.photoData: ", initialState.photoData)
-  console.log("state: ", state)
-  
+
  return {
   isModalOpen: state.isModalOpen, 
   setIsModalOpen: (isOpen) => 
@@ -93,7 +98,8 @@ useEffect(() => {
   handleSelectedPhoto,
   favourites: state.favourites,
   toggleFavourite,
-  photoData: state.photoData
+  photoData: state.photoData, 
+  topicData: state.topicData
  }
 }
 
