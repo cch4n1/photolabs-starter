@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import "./App.scss";
 import HomeRoute from "routes/HomeRoute";
-// import mockPhotos from "mocks/photos";
-// import mockTopics from "mocks/topics";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
 import useApplicationData from "hooks/useApplicationData";
 
