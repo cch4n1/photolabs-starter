@@ -78,6 +78,20 @@ useEffect(() => {
     .catch(error => console.error("There was an error with fetching data:", error));
 }, []);
 
+const topicHandler = (topicId) => {
+  fetch(`http://localhost:8001/api/topics/photos/${topicId}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json()
+    })
+    .then((data) => {
+      dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: data })
+    })
+    .catch(error => console.error("There was an error with fetching data:", error));
+}
+
  // Function to check photo id of selected photo with database and then sets state to that photo
  const handleSelectedPhoto = (photoId) => {
    let photoSelection = state.photoData.find((photo) => photo.id === photoId);
@@ -99,7 +113,8 @@ useEffect(() => {
   favourites: state.favourites,
   toggleFavourite,
   photoData: state.photoData, 
-  topicData: state.topicData
+  topicData: state.topicData,
+  topicHandler,
  }
 }
 

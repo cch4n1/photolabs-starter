@@ -18,7 +18,8 @@ const App = () => {
     setFavourites,
     toggleFavourite,
     photoData,
-    topicData
+    topicData,
+    topicHandler
         } = useApplicationData();
 
 return (
@@ -31,6 +32,7 @@ return (
         setSelectedPhoto={handleSelectedPhoto}
         favourites={favourites}
         toggleFavourite={toggleFavourite}
+        topicHandler={topicHandler}
       />
       {isModalOpen && (
         <PhotoDetailsModal

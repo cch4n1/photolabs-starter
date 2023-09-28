@@ -17,6 +17,7 @@ const HomeRoute = (props) => {
       <TopNavigationBar 
         navTopics={props.topics} 
         isFavPhotoExist={props.favourites.length > 0}
+        topicHandler={props.topicHandler}
       />
       <PhotoList 
         photos={props.photos}

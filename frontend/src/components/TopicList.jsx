@@ -6,7 +6,7 @@ import TopicListItem from "./TopicListItem";
 
 const TopicList = (props) => {
   const topicsMap = props.topics.map(topic => (
-    <TopicListItem label={topic.title} key={topic.id} />
+    <TopicListItem label={topic.title} key={topic.id} topicHandler={props.topicHandler} topicId={topic.id}/>
   ));
 
   return (

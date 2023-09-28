@@ -11,10 +11,13 @@ const sampleDataForTopicListItem = {
 const TopicListItem = (props) => {
 
   const { label } = props;
+  console.log("anything")
+
 
   return (
-    <div className="topic-list__item">
+    <div className="topic-list__item" onClick={ () => { props.topicHandler(props.topicId)}}>
       {/* Insert React */}
+      {/* <a href="" style={{ textDecoration: 'none' }} ><span >{label}</span></a> */}
       <span>{label}</span>
     </div>
   );
