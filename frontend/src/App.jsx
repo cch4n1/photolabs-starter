@@ -17,13 +17,13 @@ const App = () => {
     handleSelectedPhoto,
     favourites,
     setFavourites,
-    toggleFavourite 
+    toggleFavourite,
+    photoData,
         } = useApplicationData();
-
-  return (
+return (
     <div className="App">
       <HomeRoute
-        photos={mockPhotos}
+        photos={photoData}
         topics={mockTopics}
         setIsOpen={setIsModalOpen}
         selectedPhoto={selectedPhoto}

@@ -8,7 +8,7 @@ import PhotoList from '../components/PhotoList';
 
 const HomeRoute = (props) => {
 
-  console.log("home route props: ", props)
+  // console.log("home route props: ", props)
   // console.log("topicsProp: ", props.topics)
 
   return (
