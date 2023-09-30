@@ -14,6 +14,8 @@ const HomeRoute = (props) => {
         navTopics={props.topics} 
         isFavPhotoExist={props.favourites.length > 0}
         topicHandler={props.topicHandler}
+        darkMode={props.darkMode}
+        toggleDarkMode={props.toggleDarkMode}
       />
       <PhotoList 
         photos={props.photos}

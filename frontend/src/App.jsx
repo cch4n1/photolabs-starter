@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import HomeRoute from "routes/HomeRoute";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
@@ -17,11 +17,14 @@ const App = () => {
     toggleFavourite,
     photoData,
     topicData,
-    topicHandler
+    topicHandler,
+    //dark mode imports
+    darkMode, 
+    toggleDarkMode
         } = useApplicationData();
 
 return (
-    <div className="App">
+  <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <HomeRoute
         photos={photoData}
         topics={topicData}
@@ -31,6 +34,9 @@ return (
         favourites={favourites}
         toggleFavourite={toggleFavourite}
         topicHandler={topicHandler}
+        //dark mode props
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
       />
       {isModalOpen && (
         <PhotoDetailsModal

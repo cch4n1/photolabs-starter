@@ -6,14 +6,16 @@ const initialState = {
   selectedPhoto: null,
   favourites: [],
   photoData: [],
-  topicData: []
+  topicData: [],
+  darkMode: false, //darkmode variable for state
 };
 export const ACTIONS={
   TOGGLE_MODAL: 'TOGGLE_MODAL',
   SELECT_PHOTO: 'SELECT_PHOTO',
   TOGGLE_FAVOURITE: 'TOGGLE_FAVOURITE',
   SET_PHOTO_DATA: 'SET_PHOTO_DATA',
-  SET_TOPIC_DATA: 'SET_TOPIC_DATA'
+  SET_TOPIC_DATA: 'SET_TOPIC_DATA', 
+  TOGGLE_DARK_MODE: "TOGGLE_DARK_MODE", //dark mode action type
 }
 
 function reducer(state, action) {
@@ -39,6 +41,11 @@ function reducer(state, action) {
         ? state.favourites.filter((favPhotoId) => favPhotoId !== photoId)
         : [...state.favourites, photoId];
       return { ...state, favourites: updatedFavourites };
+    case ACTIONS.TOGGLE_DARK_MODE: // Add a case for toggling dark mode
+      return {
+        ...state,
+        darkMode: !state.darkMode, // Toggle dark mode state
+      };
     default: 
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
@@ -115,6 +122,9 @@ const topicHandler = (topicId) => {
   photoData: state.photoData, 
   topicData: state.topicData,
   topicHandler,
+   // New dark mode state and function
+   darkMode: state.darkMode,
+   toggleDarkMode: () => dispatch({ type: ACTIONS.TOGGLE_DARK_MODE }),
  }
 }
 
