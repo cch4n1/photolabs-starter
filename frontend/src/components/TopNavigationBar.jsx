@@ -1,11 +1,9 @@
 import React from 'react';
-
 import '../styles/TopNavigationBar.scss';
 import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 
 const TopNavigation = (props) => {
-  console.log("top navigation props: ", props)
 
   return (
     <div className="top-nav-bar">

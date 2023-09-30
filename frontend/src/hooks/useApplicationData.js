@@ -26,12 +26,12 @@ function reducer(state, action) {
       return {      
         ...state,
         isModalOpen: action.payload
-      }; /* we'll come back to add logic here soon */
+      }; 
     case ACTIONS.SELECT_PHOTO:
       return {
         ...state,
         selectedPhoto: action.payload
-      }; /* we'll come back to add logic here soon */
+      }; 
     case ACTIONS.TOGGLE_FAVOURITE:
       const photoId = action.payload;
       const isFavorite = state.favourites.includes(photoId);

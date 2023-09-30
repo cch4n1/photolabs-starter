@@ -8,12 +8,8 @@ import PhotoList from '../components/PhotoList';
 
 const HomeRoute = (props) => {
 
-  // console.log("home route props: ", props)
-  // console.log("topicsProp: ", props.topics)
-
   return (
     <div className="home-route">
-      {/* Insert React */}
       <TopNavigationBar 
         navTopics={props.topics} 
         isFavPhotoExist={props.favourites.length > 0}
