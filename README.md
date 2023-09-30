@@ -10,6 +10,15 @@ Welcome to PhotoLabs, a React-based single-page application (SPA) that allows us
 - [Getting Started](#getting-started)
 - [Setup](#setup)
 
+
+## Screenshots
+### Homepage
+![Homepage](/screenshots/homepage.png)
+### Enlarge Photo
+![Enlarge Photo](/screenshots/enlarge-photo.png)
+### Like Photos
+![Like Photos](/screenshots/like-photos.png)
+
 ## Behavior
 
 This application provides the following functionality to users:
