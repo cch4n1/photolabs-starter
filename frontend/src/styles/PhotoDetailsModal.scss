@@ -14,6 +14,10 @@
   // flex-direction: column;
 }
 
+.App.dark-mode .photo-details-modal {
+  background-color: #333333;
+}
+
 .photo-details-modal.closed {
   display: none; /* Hide the modal when it has the "closed" class */
 }
@@ -32,6 +36,10 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.App.dark-mode .photo-details-modal__close-button {
+  background-color: #333333;
 }
 
 .photo-details-modal__box {
@@ -82,6 +90,10 @@
   font-weight: 700;
   font-size: 12px;
   margin-left: 8px;
+}
+
+.App.dark-mode .photo-details-modal__user-info {
+  color: #ffffff;
 }
 
 .photo-details-modal__user-location {

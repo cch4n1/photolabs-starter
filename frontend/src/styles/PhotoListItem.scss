@@ -9,6 +9,11 @@
   background-color: #ffffff;
 }
 
+.App.dark-mode .photo-list__item  {
+  background-color: #232323;
+  border-color:#171717;
+}
+
 .photo-list__image {
   user-select: none;
   width: 300px;
@@ -42,6 +47,10 @@
   font-weight: 700;
   font-size: 12px;
   margin-left: 8px;
+}
+
+.App.dark-mode .photo-list__user-info  {
+  color: #ffffff;
 }
 
 .photo-list__user-location {

@@ -12,7 +12,7 @@
 }
 
 .top-nav-bar.dark-mode {
-  background-color: #333333;
+  background-color: #232323;
 }
 
 .top-nav-bar__logo {
@@ -22,4 +22,8 @@
   color: #111;
   text-underline-position: auto;
   margin-left: 24px;
+}
+
+.top-nav-bar.dark-mode .top-nav-bar__logo {
+  color: #ffffff;
 }

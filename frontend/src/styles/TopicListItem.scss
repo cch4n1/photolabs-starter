@@ -8,9 +8,20 @@
   text-decoration: none;
   font-weight: 500;
   color: #2b2b2b;
+  cursor: pointer;
 
   &:hover {
     text-decoration: overline;
     color: #111;
   }
+}
+
+//dark mode colour change
+.top-nav-bar.dark-mode .topic-list__item span {
+  color: #ffffff;
+}
+
+/* Change color on hover in dark mode */
+.top-nav-bar.dark-mode .topic-list__item span:hover {
+  color: #b6b6b6;
 }

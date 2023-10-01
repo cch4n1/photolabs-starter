@@ -5,12 +5,11 @@ import FavBadge from './FavBadge';
 
 const TopNavigation = (props) => {
   const [isDarkMode, setIsDarkMode] = useState(props.darkMode);
-  
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode); // Toggle the local state
     props.toggleDarkMode(); // Toggle the parent's dark mode state
   };
-
+  
   return (
    <div className={`top-nav-bar ${isDarkMode ? 'dark-mode' : ''}`}>
       <span className="top-nav-bar__logo">PhotoLabs</span>
